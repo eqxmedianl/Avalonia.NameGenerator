@@ -1,18 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.NameGenerator", "Avalonia.NameGenerator\Avalonia.NameGenerator.csproj", "{684ADF3B-8DFC-4F4A-93AD-F856561FCC39}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.NameGenerator", "Avalonia.NameGenerator\Avalonia.NameGenerator.csproj", "{684ADF3B-8DFC-4F4A-93AD-F856561FCC39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.NameGenerator.Sandbox", "Avalonia.NameGenerator.Sandbox\Avalonia.NameGenerator.Sandbox.csproj", "{C90BB1C6-5C33-494A-96FA-FEE7B34CA83C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.NameGenerator.Sandbox", "Avalonia.NameGenerator.Sandbox\Avalonia.NameGenerator.Sandbox.csproj", "{C90BB1C6-5C33-494A-96FA-FEE7B34CA83C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.NameGenerator.Tests", "Avalonia.NameGenerator.Tests\Avalonia.NameGenerator.Tests.csproj", "{B13A0A44-85BC-49A7-970F-6C9BF8BDFD54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.NameGenerator.Tests", "Avalonia.NameGenerator.Tests\Avalonia.NameGenerator.Tests.csproj", "{B13A0A44-85BC-49A7-970F-6C9BF8BDFD54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{56EF74A3-1D59-42BC-B7EC-2E07C08B9F95}"
-ProjectSection(SolutionItems) = preProject
-	..\version.json = ..\version.json
-	..\.gitignore = ..\.gitignore
-	..\.gitmodules = ..\.gitmodules
-	Directory.Build.props = Directory.Build.props
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\.gitmodules = ..\.gitmodules
+		Directory.Build.props = Directory.Build.props
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\README.VisualBasic.md = ..\README.VisualBasic.md
+		..\README.VisualBasic.NuGet.md = ..\README.VisualBasic.NuGet.md
+		..\version.json = ..\version.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.NameGenerator.VisualBasic", "Avalonia.NameGenerator.VisualBasic\Avalonia.NameGenerator.VisualBasic.csproj", "{DA9B671E-22A5-4B9F-B1B7-1094F761A1EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +41,15 @@ Global
 		{B13A0A44-85BC-49A7-970F-6C9BF8BDFD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B13A0A44-85BC-49A7-970F-6C9BF8BDFD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B13A0A44-85BC-49A7-970F-6C9BF8BDFD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA9B671E-22A5-4B9F-B1B7-1094F761A1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9B671E-22A5-4B9F-B1B7-1094F761A1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9B671E-22A5-4B9F-B1B7-1094F761A1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9B671E-22A5-4B9F-B1B7-1094F761A1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B9B8CF9-0C5D-47B1-BE88-9A4CD64306D8}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,1 @@
+﻿Generates typed x:Name references to Avalonia controls declared in XAML for Visual Basic.

@@ -1,0 +1,132 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>preview</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <PackageId>XamlNameReferenceGenerator.VisualBasic</PackageId>
+        <PackageVersion>1.6.1-beta1</PackageVersion>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReleaseNotes>https://github.com/eqxmedianl/Avalonia.NameGenerator/releases</PackageReleaseNotes>
+        <RepositoryUrl>https://github.com/eqxmedianl/Avalonia.NameGenerator</RepositoryUrl>
+        <PackageProjectUrl>https://www.eqxmedia.com/Avalonia.NameGenerator.VisualBasic/</PackageProjectUrl>
+        <Authors>EQX Media B.V.</Authors>
+        <Company>EQX Media B.V.</Company>
+        <PublisherName>EQX Media B.V.</PublisherName>
+        <Copyright>Copyright (c) 2024 EQX Media B.V.</Copyright>
+        <Description>
+          Generates typed x:Name references to Avalonia controls declared in XAML for Visual Basic.
+        </Description>
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+        <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <IsRoslynComponent>true</IsRoslynComponent>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <PackageReadmeFile>README.VisualBasic.NuGet.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis" Version="4.10.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic" Version="4.10.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="..\..\README.VisualBasic.NuGet.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="Generator.props">
+         <Pack>true</Pack>
+         <PackagePath>buildTransitive\$(PackageId).props</PackagePath>
+      </None>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/vb" Visible="false" />
+    </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="../../external/XamlX/src/XamlX/**/SreTypeSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\Clr.cs" Link="XamlX\Ast\Clr.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\Common.cs" Link="XamlX\Ast\Common.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\CompilerHelpers.cs" Link="XamlX\Ast\CompilerHelpers.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\Intrinsics.cs" Link="XamlX\Ast\Intrinsics.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\Xaml.cs" Link="XamlX\Ast\Xaml.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\XamlDocument.cs" Link="XamlX\Ast\XamlDocument.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Ast\Xml.cs" Link="XamlX\Ast\Xml.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Compiler\XamlCompiler.cs" Link="XamlX\Compiler\XamlCompiler.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Compiler\XamlImperativeCompiler.cs" Link="XamlX\Compiler\XamlImperativeCompiler.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Emit\XamlEmitContext.cs" Link="XamlX\Emit\XamlEmitContext.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Emit\XamlEmitContextWithLocals.cs" Link="XamlX\Emit\XamlEmitContextWithLocals.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Emit\XamlLanguageEmitMappings.cs" Link="XamlX\Emit\XamlLanguageEmitMappings.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Emit\XamlRuntimeContext.cs" Link="XamlX\Emit\XamlRuntimeContext.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Exceptions.cs" Link="XamlX\Exceptions.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\FriendAssembly.cs" Link="XamlX\FriendAssembly.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\CheckingIlEmitter.cs" Link="XamlX\IL\CheckingIlEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\ManipulationGroupEmitter.cs" Link="XamlX\IL\Emitters\ManipulationGroupEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\MarkupExtensionEmitter.cs" Link="XamlX\IL\Emitters\MarkupExtensionEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\MethodCallEmitter.cs" Link="XamlX\IL\Emitters\MethodCallEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\NewObjectEmitter.cs" Link="XamlX\IL\Emitters\NewObjectEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\ObjectInitializationNodeEmitter.cs" Link="XamlX\IL\Emitters\ObjectInitializationNodeEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\PropertyAssignmentEmitter.cs" Link="XamlX\IL\Emitters\PropertyAssignmentEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\PropertyValueManipulationEmitter.cs" Link="XamlX\IL\Emitters\PropertyValueManipulationEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\TextNodeEmitter.cs" Link="XamlX\IL\Emitters\TextNodeEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\Emitters\ValueWithManipulationsEmitter.cs" Link="XamlX\IL\Emitters\ValueWithManipulationsEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\ILEmitContext.cs" Link="XamlX\IL\ILEmitContext.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\ILEmitHelpers.cs" Link="XamlX\IL\ILEmitHelpers.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\IXamlILEmitter.cs" Link="XamlX\IL\IXamlILEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\IXamlILLocal.cs" Link="XamlX\IL\IXamlILLocal.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\NamespaceInfoProvider.cs" Link="XamlX\IL\NamespaceInfoProvider.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\RecordingIlEmitter.cs" Link="XamlX\IL\RecordingIlEmitter.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\RuntimeContext.cs" Link="XamlX\IL\RuntimeContext.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\XamlIlCompiler.cs" Link="XamlX\IL\XamlIlCompiler.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\IL\XamlILEmitterExtensions.cs" Link="XamlX\IL\XamlILEmitterExtensions.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\CommaSeparatedParenthesesTreeParser.cs" Link="XamlX\Parsers\CommaSeparatedParenthesesTreeParser.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\CompatibleXmlReader.cs" Link="XamlX\Parsers\CompatibleXmlReader.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\SystemXamlMarkupExtensionParser\KnownStrings.cs" Link="XamlX\Parsers\SystemXamlMarkupExtensionParser\KnownStrings.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\SystemXamlMarkupExtensionParser\MeScanner.cs" Link="XamlX\Parsers\SystemXamlMarkupExtensionParser\MeScanner.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\SystemXamlMarkupExtensionParser\MeScanner.Shims.cs" Link="XamlX\Parsers\SystemXamlMarkupExtensionParser\MeScanner.Shims.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\SystemXamlMarkupExtensionParser\SystemXamlMarkupExtensionParser.cs" Link="XamlX\Parsers\SystemXamlMarkupExtensionParser\SystemXamlMarkupExtensionParser.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\XamlMarkupExtensionParser.cs" Link="XamlX\Parsers\XamlMarkupExtensionParser.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Parsers\XDocumentXamlParser.cs" Link="XamlX\Parsers\XDocumentXamlParser.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\AstTransformationContext.cs" Link="XamlX\Transform\AstTransformationContext.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\IXamlAstTransformer.cs" Link="XamlX\Transform\IXamlAstTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\IXamlIdentifierGenerator.cs" Link="XamlX\Transform\IXamlIdentifierGenerator.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\NamespaceInfoHelper.cs" Link="XamlX\Transform\NamespaceInfoHelper.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\TransformerConfiguration.cs" Link="XamlX\Transform\TransformerConfiguration.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\ApplyWhitespaceNormalization.cs" Link="XamlX\Transform\Transformers\ApplyWhitespaceNormalization.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\ConstructableObjectTransformer.cs" Link="XamlX\Transform\Transformers\ConstructableObjectTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\ContentConvertTransformer.cs" Link="XamlX\Transform\Transformers\ContentConvertTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\ConvertPropertyValuesToAssignmentsTransformer.cs" Link="XamlX\Transform\Transformers\ConvertPropertyValuesToAssignmentsTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\DeferredContentTransformer.cs" Link="XamlX\Transform\Transformers\DeferredContentTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\FlattenAstTransformer.cs" Link="XamlX\Transform\Transformers\FlattenAstTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\KnownDirectivesTransformer.cs" Link="XamlX\Transform\Transformers\KnownDirectivesTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\MarkupExtensionTransformer.cs" Link="XamlX\Transform\Transformers\MarkupExtensionTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\NewObjectTransformer.cs" Link="XamlX\Transform\Transformers\NewObjectTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\PropertyReferenceResolver.cs" Link="XamlX\Transform\Transformers\PropertyReferenceResolver.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\RemoveWhitespaceBetweenPropertyValuesTransformer.cs" Link="XamlX\Transform\Transformers\RemoveWhitespaceBetweenPropertyValuesTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\ResolveContentPropertyTransformer.cs" Link="XamlX\Transform\Transformers\ResolveContentPropertyTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\ResolvePropertyValueAddersTransformer.cs" Link="XamlX\Transform\Transformers\ResolvePropertyValueAddersTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\TextNodeMerger.cs" Link="XamlX\Transform\Transformers\TextNodeMerger.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\TopDownInitializationTransformer.cs" Link="XamlX\Transform\Transformers\TopDownInitializationTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\TypeReferenceResolver.cs" Link="XamlX\Transform\Transformers\TypeReferenceResolver.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\XamlIntrinsicsTransformer.cs" Link="XamlX\Transform\Transformers\XamlIntrinsicsTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\Transformers\XArgumentsTransformer.cs" Link="XamlX\Transform\Transformers\XArgumentsTransformer.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\WhitespaceNormalization.cs" Link="XamlX\Transform\WhitespaceNormalization.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\XamlContextBase.cs" Link="XamlX\Transform\XamlContextBase.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\XamlLanguageTypeMappings.cs" Link="XamlX\Transform\XamlLanguageTypeMappings.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\XamlTransformHelpers.cs" Link="XamlX\Transform\XamlTransformHelpers.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\Transform\XamlXmlnsMappings.cs" Link="XamlX\Transform\XamlXmlnsMappings.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\TypeSystem\TypeSystem.cs" Link="XamlX\TypeSystem\TypeSystem.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\TypeSystem\TypeSystemHelpers.cs" Link="XamlX\TypeSystem\TypeSystemHelpers.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\TypeSystem\XamlLocalsPool.cs" Link="XamlX\TypeSystem\XamlLocalsPool.cs" />
+    <Compile Include="..\..\external\XamlX\src\XamlX\XamlNamespaces.cs" Link="XamlX\XamlNamespaces.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XamlX\Ast\" />
+    <Folder Include="XamlX\Compiler\" />
+    <Folder Include="XamlX\Emit\" />
+    <Folder Include="XamlX\IL\Emitters\" />
+    <Folder Include="XamlX\TypeSystem\" />
+    <Folder Include="XamlX\Parsers\SystemXamlMarkupExtensionParser\" />
+    <Folder Include="XamlX\Transform\Transformers\" />
+  </ItemGroup>
+</Project>
