@@ -8,7 +8,7 @@
         <PackageVersion>1.6.1-beta1</PackageVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReleaseNotes>https://github.com/eqxmedianl/Avalonia.NameGenerator/releases</PackageReleaseNotes>
-        <RepositoryUrl>https://github.com/eqxmedianl/Avalonia.NameGenerator</RepositoryUrl>
+        <RepositoryUrl>https://github.com/eqxmedianl/Avalonia.NameGenerator/tree/visualbasic</RepositoryUrl>
         <PackageProjectUrl>https://www.eqxmedia.com/Avalonia.NameGenerator.VisualBasic/</PackageProjectUrl>
         <Authors>EQX Media B.V.</Authors>
         <Company>EQX Media B.V.</Company>
